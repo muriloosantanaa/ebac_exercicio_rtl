@@ -1,14 +1,11 @@
 # EBAC Exercício React Testing Library
 
-Projeto para praticar o uso do React Testing Library.
+Exercício de prática com React Testing Library para adicionar comentários e testar inserção de múltiplos comentários.
 
-## Rodar localmente
-```bash
-npm install
-npm start
+## Testes
+
+Rodar:
 ```
-
-## Rodar os testes
-```bash
+npm install
 npm test
 ```

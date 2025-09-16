@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 function App() {
   const [comments, setComments] = useState([]);
-  const [text, setText] = useState("");
+  const [input, setInput] = useState('');
 
-  const handleAddComment = () => {
-    if (text.trim()) {
-      setComments([...comments, text]);
-      setText("");
+  const addComment = () => {
+    if (input.trim() !== '') {
+      setComments([...comments, input]);
+      setInput('');
     }
   };
 
@@ -17,19 +17,14 @@ function App() {
       <input
         data-testid="comment-input"
         type="text"
-        placeholder="Digite seu comentário"
-        value={text}
-        onChange={(e) => setText(e.target.value)}
+        value={input}
+        onChange={(e) => setInput(e.target.value)}
       />
-      <button data-testid="comment-button" onClick={handleAddComment}>
-        Adicionar
-      </button>
+      <button data-testid="add-button" onClick={addComment}>Adicionar</button>
 
       <ul>
-        {comments.map((c, i) => (
-          <li key={i} data-testid="comment-text">
-            {c}
-          </li>
+        {comments.map((comment, index) => (
+          <li key={index} data-testid="comment-item">{comment}</li>
         ))}
       </ul>
     </div>
